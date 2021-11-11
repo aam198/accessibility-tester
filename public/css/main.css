@@ -1,0 +1,72 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+
+:root{
+  --bkg-clr: #2f4858;
+  --blue-dark: #1c2c62;
+  --blue-med: rgba(45 68 105 / 100%);
+
+  --font-clr: #F6F7F9;
+  --font-dark: #000657;
+
+  --font-header: 'Archivo Narrow', sans-serif;
+  --font-body:'Libre Franklin', sans-serif;
+  --font-small: 'Noto Sans', sans-serif;
+  
+  --dashed: rgba(45 68 105 / 100%);
+  --orange: #ff9900;
+  --progress-ylw: #ffc400;
+  --red-clr: #c35353;
+  --red-clr-hover: #de3838;
+  --clr-white: #ffffff; 
+
+  --banner-color: rgba(45 68 105 / 100%);
+
+  --card-bg-color:rgba( 48 72 106 / 20%);
+  --card-content-clr:rgba(246 247 249 / 45%);
+
+  --button-clr: rgba(45 68 105 / 100%);
+  --button-hover: #1c2c62;
+  
+
+  --login-border:rgba(249 250 251 /80%);
+  --border-color: rgba(113 119 144 / 25%);
+  --inactive-color: rgb(113 119 144 / 78%);
+  --content-title-color: #999ba5;
+  --search-bg:  #e3e7ea;
+}
+
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+
+    scrollbar-color: #666 #201c29; 
+    font-size: 100%;
+}
+
+
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0; 
+  background-color: #f8f9fa;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.loader {
+  display: none;
+}
+
