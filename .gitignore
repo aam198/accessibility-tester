@@ -1,0 +1,13 @@
+
+node_modules
+/node_modules/
+
+
+#Visual Studio cache/options
+/.vscode 
+.vscode/
+*.vscode
+
+
+.DS_STORE/
+*.DS_STORE
