@@ -40,6 +40,34 @@ const testAccessibility = async (e) => {
 
 const addIssuesToDOM = (issues) => {
   console.log(issues)
+  const issuesOutput = document.querySelector('#issues');
+
+  issuesOutput.innerHTML = ''; 
+
+  // Checking for empty array/no issues
+  if(issues.length === 0){
+    issuesOutput.innerHTML = '<h4>Congrats! No Issues Found</h4>'
+  }else {
+    issues.forEach((issue) =>{
+      const output = `
+      <div class="card mb-5">
+        <div class="card-body">
+          <h4>${issue.message}</h4>
+          <p class="bg-light p-3 my-3">
+            ${escapeHTML(issue.context)}
+          </p>
+
+          <p class="bg-secondary text-light p-2">
+            CODE: ${issue.code}
+          </p>
+        </div>
+      </div>
+      `
+      //to output to the DOM, need += to keep adding so doesn't replace
+      issuesOutput.innerHTML += output;
+    })
+  }
+
 }
 // Set the loading state 
 
@@ -53,7 +81,16 @@ const setLoading = (isLoading = true) => {
   }
 
 }
-// Escape HTML
+// Escape HTML - regular expressions to replace certain characters to output the html without rendering.
+
+function escapeHTML(html) {
+  return html 
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;')
+}
 
 
 
