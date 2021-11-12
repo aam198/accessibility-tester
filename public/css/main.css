@@ -70,3 +70,10 @@ body {
   display: none;
 }
 
+.alert-primary{
+  display: none;
+}
+
+.alert-danger{
+  display: none;
+}

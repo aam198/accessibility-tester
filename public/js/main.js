@@ -1,3 +1,6 @@
+
+
+
 // Fetch accessibility issues in the backend
 
 const testAccessibility = async (e) => {
@@ -8,28 +11,36 @@ const testAccessibility = async (e) => {
   console.log(url)
 
   if(url === '') {
-    alert('Please add a url')
+    const emptyURL = document.querySelector('.alert-danger');
+      emptyURL.style.display = 'block';
   } else {
     setLoading();
 
     // Make a request and get a response with our query param.
     const response = await fetch (`/api/test?url=${url}`)
-
+   
     // Checking response status
     if(response.status !== 200){
       setLoading(false)
-      alert('Oh snap! Something went wrong')
+      const statusError = document.querySelector('.alert-primary');
+      statusError.style.display = 'block';
+      alert('Oh snap! Something went wrong!')
     }
     else {
       const {issues} = await response.json()
       console.log(issues);
+      //Passing in issues data from object & turning off loader
+      addIssuesToDOM(issues)
+      setLoading(false)
     }
   }
 }
 
 // Add Issues to the DOM
 
-
+const addIssuesToDOM = (issues) => {
+  console.log(issues)
+}
 // Set the loading state 
 
 const setLoading = (isLoading = true) => {
