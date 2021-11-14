@@ -11,6 +11,7 @@ const testAccessibility = async (e) => {
   console.log(url)
 
   if(url === '') {
+    //Add in SetTimeOut for notification
     const emptyURL = document.querySelector('.alert-danger');
       emptyURL.style.display = 'block';
   } else {
