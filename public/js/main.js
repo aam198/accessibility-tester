@@ -43,7 +43,7 @@ const addIssuesToDOM = (issues) => {
   console.log(issues)
   const issuesOutput = document.querySelector('#issues');
 
-  issuesOutput.innerHTML = ''; 
+  issuesOutput.innerHTML = `<h2 class="issue-header">Current Issues: </h2>`; 
 
   // Checking for empty array/no issues
   if(issues.length === 0){
@@ -51,15 +51,15 @@ const addIssuesToDOM = (issues) => {
   }else {
     issues.forEach((issue) =>{
       const output = `
+      
       <div class="card mb-5">
         <div class="card-body">
+        <p class="bg-secondary text-light p-2">
+            CODE: ${issue.code}
+          </p>
           <h4>${issue.message}</h4>
           <p class="bg-light p-3 my-3">
             ${escapeHTML(issue.context)}
-          </p>
-
-          <p class="bg-secondary text-light p-2">
-            CODE: ${issue.code}
           </p>
         </div>
       </div>
