@@ -78,6 +78,7 @@ body {
 }
 
 .dashboard{
+  min-width: 540px;
   width: 100%;
   background-color: #ffffff;
   margin: 5rem;
@@ -85,31 +86,52 @@ body {
   box-shadow: var(--shadow-elevation-medium);
 }
 .card{
-  border-radius: 1em;
+  border-radius: 1.2em;
 }
+
+.container-sm {
+  width: 100%;
+  padding-right: 0px;
+  padding-left:0px;
+}
+
 
 /* Form */
 .url-card{
   border-radius: 1em;
-  width: 70%;
+  width: 100%;
+  min-width: 482px;
 }
-
 
 .btn {
   border-radius: 1em;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1em;
 }
+
 .fa-chevron-right{
-  font-size: 0.8rem;
+  font-size: 1em;
   margin-left: 5px;
-  margin-top: 3px;
+
 }
 .card-header {
   border-bottom: 0px;
 }
+
+/* Issue Output */
+
+.issue-container{
+  margin-top: 2em;
+  padding-right: 1em;
+  padding-left: 1em;
+}
 .issue-header{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding-bottom: 9px;
   border-bottom: 1px solid #f1f1f1;
   margin-bottom: 1em;
@@ -118,6 +140,7 @@ body {
 /* Loader */
 .loader {
   display: none;
+  margin: 2em;
 }
 
 .alert-primary{
@@ -126,4 +149,23 @@ body {
 
 .alert-danger{
   display: none;
+}
+
+/* Issues Output */
+
+.output-card {
+  transition: box-shadow .3s ease-in-out;
+  
+}
+
+.output-card:hover{
+  box-shadow: 0 2px 4px 2px rgba(0,0,0, 0.14);
+}
+
+/* .output-card:hover .bg-secondary{
+
+} */
+
+.output-card .card-header{
+  border-radius: 1em;
 }

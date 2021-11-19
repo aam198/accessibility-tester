@@ -48,22 +48,25 @@ const addIssuesToDOM = (issues) => {
   if(issues.length === 0){
     issuesOutput.innerHTML = '<h4>Congrats! No Issues Found</h4>'
   }else {
-    issuesOutput.innerHTML = `<h2 class="issue-header">Current Issues to Fix: </h2>`;
+    issuesOutput.innerHTML = `
+   
+     <h3 class="issue-header">Current Issues to Fix:  <span class="badge bg-primary rounded-pill">${issues.length}</span></h3>  `;
     issues.forEach((issue) =>{
       const output = `
       
-      <div class="card mb-5">
-        <div class="card-body">
-        <p class="bg-secondary text-light p-2">
+      <div class="card border-primary output-card mb-5">
+        <div class="card-header bg-danger text-white p-3">
             <strong>CODE</strong>: ${issue.code}
-          </p>
-          <p class="bg-light p-2 my-3">
-           <strong>Element</strong>: ${escapeHTML(issue.context)}
-          </p>
-          <p><strong>Reason</strong>: ${issue.message}</p>
+        </div>
+        <div class="card-body">
+        <p class="card-title p-2"><strong>Element to Check</strong>:
+         ${escapeHTML(issue.context)}
+         </p>
+          <p class="p-2"><strong>Reason</strong>: ${issue.message}</p>
           
         </div>
-      </div>
+        </div>
+      
       `
       //to output to the DOM, need += to keep adding so doesn't replace
       issuesOutput.innerHTML += output;
