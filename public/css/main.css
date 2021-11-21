@@ -71,8 +71,7 @@ body {
 
 .dashboard{
   min-width: 540px;
-  max-width: 1000px;
-  width: 100%;
+  width: 80%;
   background-color: #ffffff;
   margin: 5rem;
   border-radius: 1em;
@@ -116,6 +115,7 @@ body {
 /* Issue Output */
 
 .issue-container{
+  position: relative;
   margin-top: 2em;
   padding-right: 1em;
   padding-left: 1em;
@@ -130,7 +130,7 @@ body {
   margin-bottom: 1em;
 }
 
-/* Loader */
+/* Loader and Alerts */
 .loader {
   display: none;
   margin: 2em;
@@ -138,6 +138,16 @@ body {
 
 .alert-primary{
   display: none;
+}
+
+.alert-danger{
+  margin: 0 auto;
+  width: 20em;
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 200ms ease-in-out;
 }
 
 

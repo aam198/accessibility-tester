@@ -1,6 +1,6 @@
 
 const issuesOutput = document.querySelector('#issues');
-const emptyUrl= `<div class="alert alert-danger" role="alert">Please add an URL and Try Again!</div>`
+
 
 //test with https://traversy.dev
 
@@ -14,11 +14,7 @@ const testAccessibility = async (e) => {
   console.log(url)
 
   if(url === '') {
-    issuesOutput.innerHTML = emptyUrl;
-    //Add in SetTimeOut for notification
-    setTimeout(() => {
-      emptyUrl.remove();
-    }, 1000);
+    emptyToast();
   } else {
     setLoading();
 
@@ -88,8 +84,24 @@ const setLoading = (isLoading = true) => {
   else{
     loader.style.display = 'none';
   }
-
 }
+
+// Toast notifications
+function emptyToast (){
+  console.log(123);
+  const emptyUrl= document.createElement('div');
+  emptyUrl.classList.add('alert');
+  emptyUrl.classList.add('alert-danger');
+  emptyUrl.innerHTML = 'Please add an URL and Try Again!';
+  issuesOutput.appendChild(emptyUrl);
+
+    //Add in SetTimeOut for notification
+    setTimeout(() => {
+      emptyUrl.remove();
+    }, 2000);
+};
+
+
 // Escape HTML - regular expressions to replace certain characters to output the html without rendering.
 
 function escapeHTML(html) {
