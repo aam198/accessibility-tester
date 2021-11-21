@@ -1,4 +1,8 @@
 
+const issuesOutput = document.querySelector('#issues');
+const emptyUrl= `<div class="alert alert-danger" role="alert">Please add an URL and Try Again!</div>`
+
+//test with https://traversy.dev
 
 // Fetch accessibility issues in the backend
 
@@ -10,9 +14,11 @@ const testAccessibility = async (e) => {
   console.log(url)
 
   if(url === '') {
+    issuesOutput.innerHTML = emptyUrl;
     //Add in SetTimeOut for notification
-    const emptyURL = document.querySelector('.alert-danger');
-      emptyURL.style.display = 'block';
+    setTimeout(() => {
+      emptyUrl.remove();
+    }, 1000);
   } else {
     setLoading();
 
@@ -40,8 +46,6 @@ const testAccessibility = async (e) => {
 
 const addIssuesToDOM = (issues) => {
   console.log(issues)
-  const issuesOutput = document.querySelector('#issues');
-
    
 
   // Checking for empty array/no issues
@@ -96,7 +100,6 @@ function escapeHTML(html) {
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#039;')
 }
-
 
 
 document.querySelector('#form').addEventListener('submit', testAccessibility)
