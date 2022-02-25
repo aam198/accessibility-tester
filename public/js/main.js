@@ -18,23 +18,23 @@ const testAccessibility = async (e) => {
   } else {
     setLoading();
 
-  // Make a request and get a response with our query param.
-  const response = await fetch (`/api/test?url=${url}`)
-   
-  // Checking response status
-  if(response.status !== 200){
-    setLoading(false)
-    const statusError = document.querySelector('.alert-primary');
-    statusError.style.display = 'block';
-    alert('Oh snap! Something went wrong!')
-  }
-  else {
-    const {issues} = await response.json()
-    console.log(issues);
-    //Passing in issues data from object & turning off loader
-    addIssuesToDOM(issues)
-    setLoading(false)
-  }
+    // Make a request and get a response with our query param.
+    const response = await fetch (`/api/test?url=${url}`)
+    
+    // Checking response status
+    if(response.status !== 200){
+      setLoading(false)
+      const statusError = document.querySelector('.alert-primary');
+      statusError.style.display = 'block';
+      alert('Oh snap! Something went wrong!')
+    }
+    else {
+      const {issues} = await response.json()
+      console.log(issues);
+      //Passing in issues data from object & turning off loader
+      addIssuesToDOM(issues)
+      setLoading(false)
+    }
   }
 }
 
